@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Data;
 using ASPNET.Models;
 using Dapper;
+using Dapper.Contrib;
+using Dapper.Contrib.Extensions;
 
 namespace ASPNET
 {
@@ -19,7 +21,8 @@ namespace ASPNET
         public IEnumerable<Product> GetAllProducts()
         {           
             {
-                return _conn.Query<Product>("SELECT * FROM PRODUCTS;");
+               //return _conn.Query<Product>("SELECT * FROM PRODUCTS;");         //Regular Dapper
+                return _conn.GetAll<Product>();                                  //Using Dapper.Contrib   
             }
         }
 
@@ -48,7 +51,6 @@ namespace ASPNET
             var categoryList = GetCategories();
             var product = new Product();
             product.Categories = categoryList;
-
             return product;
         }
         public void DeleteProduct(Product product)

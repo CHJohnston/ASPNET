@@ -23,6 +23,14 @@
 </table>
 
 <div style="display: block">
+    <a href="/Review/ViewReview/@Model.ProductID">See Product Reviews</a>
+</div>
+
+<div style="display: block">
+    <a href="/Review/InsertReview/@Model.ProductID">Add a Review</a>
+</div>
+
+<div style="display: block">
     <a href="/Product/UpdateProduct/@Model.ProductID">Update this Product</a>
 </div>
 
@@ -33,6 +41,3 @@
         <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
     }
 </div>
-
-
-

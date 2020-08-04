@@ -34,7 +34,9 @@ namespace ASPNET
                 return conn;
             });
 
-            services.AddTransient<IProductRepository, ProductRepository>();
+            //Anytime we add new table we need a new service, respecitve repositories -- Dependancy Injection
+            services.AddTransient<IProductRepository, ProductRepository>();          
+            services.AddTransient<IReviewRepository, ReviewRepository>();
 
             services.AddControllersWithViews();
         }

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Review>
+
+<h3>Product Reviews</h3>
+<br />
+
+@if (Model.Count() != 0)
+{
+    <table class="table">
+        <tr>
+            <th>Product ID</th>
+            <th>Review ID</th>
+            <th>Rating</th>
+            <th>Reviewer</th>
+            <th>Comments</th>
+        </tr>
+        @foreach (var review in Model)
+        {
+            <tr>
+                <td>@review.ProductID</td>
+                <td>@review.ReviewID</td>
+                <td>@review.Rating</td>
+                <td>@review.Reviewer</td>
+                <td>@review.Comment</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+
+    <h5>There are no reviews for this product.</h5>
+}
+
+
+<div style="display: block">
+    @try
+    {
+        <a href=/Product/ViewProduct/@Model.FirstOrDefault().ProductID>Return to Product</a>
+
+    }
+    catch (NullReferenceException ex)
+    {
+
+    }
+</div>
+

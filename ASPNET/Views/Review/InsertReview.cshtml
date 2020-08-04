@@ -1,0 +1,27 @@
+﻿@model Review
+
+<h2>Add a New Review for @Model.ProductID</h2>
+
+@using (Html.BeginForm("InsertReviewToDatabase", "Review", "Post"))
+{
+    <label asp-for="ReviewID" type="hidden" value="" />
+
+    <input asp-for="ProductID" type="hidden" value="@Model.ProductID" /> 
+
+    <!-- label asp-for="ProductID" class="control-label">ProductID</label>
+    <input type="number" step="1" name="ProductID" class="form-control" /> -->
+
+    <label asp-for="Reviewer" class="control-label">Your Name</label>
+    <input type="text" name="Reviewer" class="form-control" value="" />
+
+    <label asp-for="Rating" class="control-label">Rating</label>
+    <input type="number" step="1" name="Rating" class="form-control" />
+
+    <label asp-for="Comment" class="control-label">Comment</label>
+    <input type="text" name="Comment" class="form-control" value="" />
+
+    <input type="submit" value="Add Review" class="btn btn-primary" />
+}
+
+
+

@@ -15,7 +15,8 @@ namespace ASPNET.Controllers
 
         public ProductController(IProductRepository repo)
         {
-            this.repo = repo;
+            this.repo = repo;          
+
         }
 
         // GET: /<controller>/
@@ -62,7 +63,7 @@ namespace ASPNET.Controllers
 
             return RedirectToAction("Index");
         }
-                public IActionResult DeleteProduct(Product product)
+        public IActionResult DeleteProduct(Product product)
         {
             repo.DeleteProduct(product);
 
