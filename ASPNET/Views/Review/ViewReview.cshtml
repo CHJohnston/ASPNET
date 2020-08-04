@@ -24,23 +24,16 @@
             </tr>
         }
     </table>
+
+    <div style="display: block">
+        <a href=/Product/ViewProduct/@Model.FirstOrDefault().ProductID>Return to Product Page</a>
+    </div>
 }
 else
 {
-
     <h5>There are no reviews for this product.</h5>
+    <div style="display: block">
+        <a href=/Product/Index>Return to Products List</a>
+    </div>
 }
-
-
-<div style="display: block">
-    @try
-    {
-        <a href=/Product/ViewProduct/@Model.FirstOrDefault().ProductID>Return to Product</a>
-
-    }
-    catch (NullReferenceException ex)
-    {
-
-    }
-</div>
-
+      
